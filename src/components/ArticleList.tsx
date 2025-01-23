@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Article } from '../types/Article';
 import ArticleItem from './ArticleItem';
+import { Container, Row } from 'react-bootstrap';
 
 const ArticleList = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -27,11 +28,13 @@ const ArticleList = () => {
   }, []);
 
   return (
-    <div className='d-flex'>
-      {articles.map((article) => (
-        <ArticleItem key={article.id} article={article} />
-      ))}
-    </div>
+    <Container className='d-flex '>
+      <Row>
+        {articles.map((article) => (
+          <ArticleItem key={article.id} article={article} />
+        ))}
+      </Row>
+    </Container>
   );
 };
 

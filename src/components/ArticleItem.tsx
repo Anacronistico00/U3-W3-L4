@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Article } from '../types/Article';
-import { Card } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 
 interface SingleArticleProps {
   article: Article;
@@ -8,8 +8,8 @@ interface SingleArticleProps {
 
 const ArticleItem = (article: SingleArticleProps) => {
   return (
-    <div>
-      <Card>
+    <Col xs={12} md={6} lg={4}>
+      <Card style={{ height: '100%' }}>
         <Card.Img
           variant='top'
           src={article.article.image_url}
@@ -21,7 +21,7 @@ const ArticleItem = (article: SingleArticleProps) => {
           <Link to={`/article/${article.article.id}`}>Leggi di più</Link>
         </Card.Body>
       </Card>
-    </div>
+    </Col>
   );
 };
 
