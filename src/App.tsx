@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ArticleList from './components/ArticleList';
 import NavbarComponent from './components/Navbar';
+import ArticleDetails from './components/ArticleDetails';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <NavbarComponent />
         <Routes>
           <Route path='/' element={<ArticleList />} />
-          <Route path='/article/:id' />
+          <Route path='/article/:id' element={<ArticleDetails />} />
         </Routes>
       </BrowserRouter>
     </>
